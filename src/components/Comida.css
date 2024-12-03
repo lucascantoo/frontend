@@ -1,0 +1,226 @@
+/* Estilo para a página de consumação de comida */
+.comida-container {
+  display: flex;
+  flex-direction: column; /* Alinha os itens de forma vertical */
+  justify-content: flex-start; /* Alinha os itens no topo */
+  align-items: center; /* Alinha os itens no centro horizontalmente */
+  height: 100vh; /* Faz o contêiner ocupar toda a altura da tela */
+  background-color: #2f4f4f; /* Fundo verde escuro */
+  color: white; /* Cor do texto */
+  text-align: center; /* Centraliza o texto dentro da tela */
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  margin-top: 20px; /* Espaçamento abaixo do título */
+}
+
+.input-container {
+  display: flex; /* Alinha os itens de forma horizontal */
+  gap: 10px; /* Espaçamento entre os inputs */
+  margin-bottom: 20px; /* Espaçamento abaixo dos inputs */
+}
+
+.input-container input {
+  flex: 1; /* Faz com que os inputs ocupem o mesmo espaço */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-container button {
+  padding: 10px 15px;
+  background-color: #2d4b4b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input-container button:hover {
+  background-color: #1a2b2b;
+}
+
+.progress-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 30px 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-inner {
+  height: 100%;
+  background-color: #ffa500; /* Cor laranja da barra de progresso */
+  transition: width 0.3s ease-in-out;
+}
+
+/* Estilo para a lista de alimentos consumidos */
+.food-list {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+  border-radius: 10px;
+  height: 200px; /* Define a altura máxima para a lista */
+  overflow-y: auto; /* Adiciona o scroll vertical quando o conteúdo ultrapassar a altura */
+}
+
+.food-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.food-list li {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Fundo semitransparente para os itens */
+  border-radius: 5px;
+}
+
+.food-list li span {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.buttons-container button {
+  width: 45%;
+  padding: 12px;
+  font-size: 1.1em;
+  background-color: #ffa500;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buttons-container button:hover {
+  background-color: #e68900;
+}
+
+/* Estilo para a frase "Progresso do consumo" */
+.progress-container p {
+  font-weight: bold; /* Aumenta a espessura da fonte (negrito) */
+  font-size: 1.2em; /* Ajusta o tamanho da fonte */
+  text-align: left; /* Alinha à esquerda */
+  margin-bottom: 10px; /* Adiciona um pequeno espaçamento abaixo */
+  margin-left: 25%; /* Move a frase um pouco para a direita */
+}
+
+/* Estilo para o botão de logout em vermelhos */
+button.logout {
+  background-color: #ff4500; /* Cor vermelha para o botão de logout */
+}
+
+button.logout:hover {
+  background-color: #e03e00; /* Cor mais escura ao passar o mouse */
+}
+
+header {
+  background-color: #263f3f;
+  padding: 10px 0;
+  border-radius: 10px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px; /* Aumenta o espaçamento entre os links */
+  margin: 0 auto; /* Centraliza os links */
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #2d4b4b; /* Adiciona um background como se fosse um botão */
+  padding: 10px 15px; /* Adiciona padding para parecer um botão */
+  border-radius: 5px; /* Adiciona bordas arredondadas */
+}
+
+.nav-links a:hover {
+  color: #e68900;
+  background-color: #1a2b2b; /* Muda a cor do background no hover */
+}
+
+button.logout {
+  background-color: #ff4500;
+  color: white;
+  border: none;
+  padding: 5px 10px; /* Diminui o tamanho do botão de logout */
+  cursor: pointer;
+  border-radius: 5px; /* Adiciona bordas arredondadas */
+}
+
+button.logout:hover {
+  background-color: #e03e00;
+}
+
+.comida-container {
+  padding-top: 60px; /* Espaço para o cabeçalho fixo */
+}
+
+
+.total-gramas {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.total-gramas p {
+  color: white;
+}
+
+.total-gramas span {
+  color: #e68900;
+}
+
+.total-gramas {
+  font-weight: bold;
+  color: #e68900;
+  margin: 10px 0;
+}

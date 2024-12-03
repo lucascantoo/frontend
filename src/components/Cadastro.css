@@ -1,0 +1,109 @@
+/* Estilo para a página de cadastro */
+.cadastro-container {
+  display: flex;
+  flex-direction: column; /* Alinha os itens de forma vertical */
+  justify-content: center; /* Alinha os itens no centro verticalmente */
+  align-items: center; /* Alinha os itens no centro horizontalmente */
+  height: 100vh; /* Faz o contêiner ocupar toda a altura da tela */
+  background-color: #2f4f4f; /* Fundo verde escuro */
+}
+
+form {
+  width: 100%; /* Ocupa 100% da largura do contêiner */
+  max-width: 400px; /* Limita a largura máxima para um valor confortável */
+  padding: 20px; /* Adiciona espaçamento interno */
+  background-color: white; /* Cor de fundo branca */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombras para dar profundidade */
+}
+
+input {
+  width: 100%; /* Faz os inputs e o botão ocuparem toda a largura */
+  margin: 10px 0; /* Espaçamento entre os elementos */
+  padding: 12px; /* Aumenta o preenchimento interno dos campos */
+  font-size: 16px; /* Tamanho de fonte confortável */
+  border: 1px solid #ddd; /* Bordas finas */
+  border-radius: 4px; /* Bordas arredondadas */
+  box-sizing: border-box; /* Garante que o padding e a borda não aumentem a largura total */
+}
+
+button {
+  width: 100%; /* Faz os inputs e o botão ocuparem toda a largura */
+  margin: 10px 0 50px 0; /* Espaçamento entre os elementos */
+  padding: 12px; /* Aumenta o preenchimento interno dos campos */
+  font-size: 16px; /* Tamanho de fonte confortável */
+  border: 1px solid #ddd; /* Bordas finas */
+  border-radius: 4px; /* Bordas arredondadas */
+  box-sizing: border-box;
+
+  background-color: #ffa500; /* Cor laranja para o botão */
+  color: white; /* Texto branco */
+  border: none; /* Remove a borda do botão */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+button:hover {
+  background-color: #e68900; /* Cor mais escura ao passar o mouse */
+}
+
+h2 {
+  color: white; /* Cor branca para o título "Cadastro" */
+}
+
+p {
+  text-align: center; /* Alinha o texto do parágrafo no centro */
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 0px;
+}
+
+a {
+  color: #ffa500; /* Cor laranja para o link */
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+a:hover {
+  text-decoration: underline; /* Adiciona sublinhado quando o mouse passa por cima */
+}
+
+.gender-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px; /* Espaçamento entre os ícones */
+}
+
+.gender-icon {
+  cursor: pointer; /* Mostra que é clicável */
+  transition: opacity 0.2s ease-in-out; /* Suaviza a transição de opacidade */
+}
+
+.gender-icon.selected {
+  opacity: 0.7; /* Dá um efeito de escurecimento quando selecionado */
+}
+
+.gender-icon:hover {
+  opacity: 0.9; /* Aumenta a visibilidade quando o mouse passa por cima */
+}
+
+.gender-icon[alt="Masculino"] {
+  /* Adicione estilos específicos aqui */
+
+  width: 50px; /* Ajusta o tamanho dos ícones */
+  height: 40px;
+  background-color: #f0f0f0;
+  border-radius: 30%;
+  padding: 8px;
+}
+
+.gender-icon[alt="Feminino"] {
+  /* Adicione estilos específicos aqui */
+  width: 50px; /* Ajusta o tamanho dos ícones */
+  height: 40px;
+
+  background-color: #f0f0f0;
+  border-radius: 30%;
+  padding: 8px;
+}
