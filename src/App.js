@@ -12,7 +12,7 @@ function App() {
       <div className="App">
         <Routes>
           {/* Redirecionando a raiz para /cadastro */}
-          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/" element={<Navigate to="/cadastro" />} />
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />

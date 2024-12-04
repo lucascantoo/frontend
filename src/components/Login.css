@@ -28,22 +28,24 @@ input {
 }
 
 button {
-  width: 100%; /* Faz os inputs e o botão ocuparem toda a largura */
-  padding: 12px; /* Aumenta o preenchimento interno dos campos */
-  font-size: 16px; /* Tamanho de fonte confortável */
-  border: 1px solid #ddd; /* Bordas finas */
-  border-radius: 4px; /* Bordas arredondadas */
+  display: block;
+  margin: 10px 0 50px auto; /* Move o botão completamente para a direita */
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
   box-sizing: border-box;
-
-  background-color: #ffa500; /* Cor laranja para o botão */
-  color: white; /* Texto branco */
-  border: none; /* Remove a borda do botão */
-  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  background-color: #ffa500;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 button:hover {
-  background-color: #e68900; /* Cor mais escura ao passar o mouse */
+  background-color: #e68900;
 }
+
+
 
 h2 {
   color: white; /* Cor branca para o título "Login" */

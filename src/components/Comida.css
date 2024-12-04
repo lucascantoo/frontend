@@ -8,6 +8,8 @@
   background-color: #2f4f4f; /* Fundo verde escuro */
   color: white; /* Cor do texto */
   text-align: center; /* Centraliza o texto dentro da tela */
+  padding-top: 60px; /* Espaço para o cabeçalho fixo */
+  padding-bottom: 60px; /* Espaço para o rodapé fixo */
 }
 
 h2 {
@@ -16,19 +18,69 @@ h2 {
   margin-top: 20px; /* Espaçamento abaixo do título */
 }
 
-.input-container {
-  display: flex; /* Alinha os itens de forma horizontal */
-  gap: 10px; /* Espaçamento entre os inputs */
-  margin-bottom: 20px; /* Espaçamento abaixo dos inputs */
+/* Barra de progresso */
+.progress-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px 0;
+  text-align: center;
 }
 
-.input-container input {
-  flex: 1; /* Faz com que os inputs ocupem o mesmo espaço */
+.progress-container p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-inner {
+  height: 100%;
+  background: linear-gradient(90deg, #ffa500, #ff7b00); /* Degradê de laranja */
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Campo de entrada */
+.input-container {
+  display: flex;
+  flex-direction: column; /* Ajusta os itens para ficarem em coluna */
+  gap: 10px; /* Espaçamento entre os elementos */
+  margin-bottom: 20px; /* Espaçamento abaixo */
+  width: 100%;
+  max-width: 400px; /* Limita a largura máxima */
+}
+
+.input-wrapper {
+  position: relative; /* Necessário para alinhar a lista de sugestões ao campo */
+  width: 100%;
+}
+
+/* Campo de texto */
+.input-wrapper input {
+  flex: 1; /* Faz com que o input ocupe o espaço disponível */
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  width: 100%; /* Garante que o input ocupe toda a largura do contêiner */
 }
 
+/* Botão */
 .input-container button {
   padding: 10px 15px;
   background-color: #2d4b4b;
@@ -42,102 +94,35 @@ h2 {
   background-color: #1a2b2b;
 }
 
-.progress-container {
-  width: 100%;
-  max-width: 400px;
-  margin: 30px 0;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 20px;
-  background-color: #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.progress-bar-inner {
-  height: 100%;
-  background-color: #ffa500; /* Cor laranja da barra de progresso */
-  transition: width 0.3s ease-in-out;
-}
-
-/* Estilo para a lista de alimentos consumidos */
-.food-list {
-  width: 100%;
-  max-width: 400px;
-  margin-top: 20px;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
-  border-radius: 10px;
-  height: 200px; /* Define a altura máxima para a lista */
-  overflow-y: auto; /* Adiciona o scroll vertical quando o conteúdo ultrapassar a altura */
-}
-
-.food-list ul {
-  list-style-type: none;
+.suggestions {
+  list-style: none;
+  margin: 0;
   padding: 0;
-}
-
-.food-list li {
-  margin: 10px 0;
-  padding: 10px;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.1
-  ); /* Fundo semitransparente para os itens */
+  background: white;
+  border: 1px solid #ddd;
+  max-height: 150px;
+  overflow-y: auto;
+  position: absolute;
+  top: 100%; /* Exibe logo abaixo do input */
+  left: 0;
+  width: 100%; /* Faz a largura corresponder ao input */
+  z-index: 1000;
   border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra */
 }
 
-.food-list li span {
-  font-size: 1.1em;
-  font-weight: bold;
-}
-
-.buttons-container {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  max-width: 400px;
-  margin-top: 20px;
-}
-
-.buttons-container button {
-  width: 45%;
-  padding: 12px;
-  font-size: 1.1em;
-  background-color: #ffa500;
-  color: white;
-  border: none;
-  border-radius: 5px;
+.suggestions li {
+  padding: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 14px;
+  color: #333;
 }
 
-.buttons-container button:hover {
-  background-color: #e68900;
+.suggestions li:hover {
+  background-color: #f0f0f0; /* Destaca o item ao passar o mouse */
 }
 
-/* Estilo para a frase "Progresso do consumo" */
-.progress-container p {
-  font-weight: bold; /* Aumenta a espessura da fonte (negrito) */
-  font-size: 1.2em; /* Ajusta o tamanho da fonte */
-  text-align: left; /* Alinha à esquerda */
-  margin-bottom: 10px; /* Adiciona um pequeno espaçamento abaixo */
-  margin-left: 25%; /* Move a frase um pouco para a direita */
-}
-
-/* Estilo para o botão de logout em vermelhos */
-button.logout {
-  background-color: #ff4500; /* Cor vermelha para o botão de logout */
-}
-
-button.logout:hover {
-  background-color: #e03e00; /* Cor mais escura ao passar o mouse */
-}
-
+/* Estilo para o cabeçalho fixo */
 header {
   background-color: #263f3f;
   padding: 10px 0;
@@ -187,40 +172,56 @@ nav {
   background-color: #1a2b2b; /* Muda a cor do background no hover */
 }
 
-button.logout {
-  background-color: #ff4500;
+/* Estilo para o rodapé fixo */
+footer {
+  background-color: #263f3f;
+  padding: 10px 0;
+  border-radius: 10px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
   color: white;
-  border: none;
-  padding: 5px 10px; /* Diminui o tamanho do botão de logout */
-  cursor: pointer;
-  border-radius: 5px; /* Adiciona bordas arredondadas */
-}
-
-button.logout:hover {
-  background-color: #e03e00;
-}
-
-.comida-container {
-  padding-top: 60px; /* Espaço para o cabeçalho fixo */
-}
-
-
-.total-gramas {
-  margin-top: 10px;
   text-align: center;
-  font-weight: bold;
+  z-index: 1000;
 }
 
-.total-gramas p {
-  color: white;
+footer p {
+  margin: 0;
+  font-size: 14px;
+  color: #fff;
 }
 
-.total-gramas span {
-  color: #e68900;
+/* Estilo para a lista de alimentos consumidos */
+.food-list {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+  border-radius: 10px;
+  height: 200px; /* Define a altura máxima para a lista */
+  overflow-y: auto; /* Adiciona o scroll vertical quando o conteúdo ultrapassar a altura */
 }
 
-.total-gramas {
-  font-weight: bold;
-  color: #e68900;
+.food-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.food-list li {
   margin: 10px 0;
+  padding: 10px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Fundo semitransparente para os itens */
+  border-radius: 5px;
+}
+
+.food-list li span {
+  font-size: 1.1em;
+  font-weight: bold;
 }

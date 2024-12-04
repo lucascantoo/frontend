@@ -1,24 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Agua.css';
+
+// Funções auxiliares para manipulação do localStorage
+const saveToLocalStorage = (key, value) => {
+  localStorage.setItem(key, JSON.stringify(value));
+};
+
+const getFromLocalStorage = (key) => {
+  const data = localStorage.getItem(key);
+  return data ? JSON.parse(data) : [];
+};
 
 function Agua() {
   const [waterAmount, setWaterAmount] = useState('');
   const [waterList, setWaterList] = useState([]);
-  const [progress, setProgress] = useState(0);
-  const [totalAgua, setTotalAgua] = useState(0)
+  const [totalAgua, setTotalAgua] = useState(0);
 
-const handleSubmit = (e) => {
-  e.preventDefault()
-  if (waterAmount) {
-    const newWater = {
-      amount: Number(waterAmount),
-      time: new Date().toLocaleTimeString(),
+  // Carrega os dados do localStorage ao carregar o componente
+  useEffect(() => {
+    const savedWaterList = getFromLocalStorage('waterList');
+    setWaterList(savedWaterList);
+
+    const totalWater = savedWaterList.reduce((sum, water) => sum + water.amount, 0);
+    setTotalAgua(totalWater);
+  }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (waterAmount) {
+      const newWater = {
+        amount: Number(waterAmount),
+        time: new Date().toLocaleTimeString(),
+      };
+
+      const updatedWaterList = [...waterList, newWater];
+      setWaterList(updatedWaterList);
+      saveToLocalStorage('waterList', updatedWaterList);
+
+      setTotalAgua((prevTotal) => prevTotal + Number(waterAmount));
+      setWaterAmount('');
+    } else {
+      alert('Por favor, insira uma quantidade válida de água.');
     }
-    setWaterList([...waterList, newWater])
-    setTotalAgua((prevTotal) => prevTotal + Number(waterAmount))
-    setWaterAmount("")
-  }
-}
+  };
 
   return (
     <div className="agua-container">
@@ -36,11 +60,8 @@ const handleSubmit = (e) => {
               <a href="/agua">Água</a>
             </li>
           </ul>
-          <button
-            className="logout"
-            onClick={() => alert("Deslogado com sucesso!")}
-          >
-            Logout
+          <button className="logout" onClick={() => alert('Deslogado com sucesso!')}>
+            <a href="/login">Logout</a>
           </button>
         </nav>
       </header>
@@ -55,13 +76,6 @@ const handleSubmit = (e) => {
         />
         <button type="submit">Registrar Água</button>
       </form>
-
-      {/* <div className="progress-container">
-        <p>Progresso do consumo</p>
-        <div className="progress-bar">
-          <div className="progress-bar-inner" style={{ width: `${progress}%` }}></div>
-        </div>
-      </div> */}
 
       <div className="water-list">
         <h3>Água Consumida</h3>
@@ -78,6 +92,9 @@ const handleSubmit = (e) => {
         <p>
           Total consumido: <span>{totalAgua}ml</span>
         </p>
+        <p>
+          Meta de água sugerida: 2100ml.
+        </p>
       </div>
 
       <footer className="footer">
@@ -87,7 +104,7 @@ const handleSubmit = (e) => {
         </p>
       </footer>
     </div>
-  )
+  );
 }
 
 export default Agua;
