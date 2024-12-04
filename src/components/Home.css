@@ -9,50 +9,56 @@
 .home-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Alinha ao topo */
   align-items: center;
-  min-height: 100vh; /* Alterado de height para min-height */
+  min-height: 100vh; /* Mantém o conteúdo no mínimo a altura da tela */
   background-color: #2f4f4f;
   color: white;
-  padding: 60px 0; /* Ajustado para padding superior e inferior */
+  padding: 60px 0; /* Espaço para o cabeçalho e rodapé fixos */
   overflow-x: hidden; /* Previne rolagem horizontal */
 }
 
 /* Ajuste na Tipografia */
-p {
-  font-size: 1.2em;
-  margin-bottom: 40px;
-  text-align: center;
-  max-width: 80%;
- background-color: #294747;
- font-weight: bold;
-}
-
-/* Global Layout and Container Styles */
-.home-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #2f4f4f;
-  color: white;
-  padding-top: 60px; /* Space for fixed header */
-}
-
-/* Typography Styles */
 h2 {
   font-size: 2em;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 p {
   font-size: 1.2em;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-align: center;
   max-width: 80%;
-  color: black;
+  color: #000000;
 }
+
+.imc-info {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  max-width: 800px;
+  width: 90%;
+  text-align: left; /* Alinha o texto à esquerda */
+  line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+  color: white;
+  margin-left: auto; /* Centraliza o bloco no contêiner */
+  margin-right: auto; /* Centraliza o bloco no contêiner */
+}
+
+.imc-info h3 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: #ffa500; /* Destaque para os títulos */
+  text-align: left; /* Garante que o título também esteja alinhado à esquerda */
+}
+
+.imc-info p {
+  margin-bottom: 15px;
+  text-align: justify; /* Alinha o texto de forma justificada para melhor leitura */
+}
+
 
 /* Button Styles */
 button {
@@ -107,15 +113,11 @@ button.logout:hover {
   align-items: center;
 }
 
-.information-box h3 {
-  font-size: 1.5em;
-}
-
 .information-box p {
   font-size: 1.1em;
   margin-top: 0;
   margin-bottom: 15px;
-  color: #fff;
+  color: #000000;
 }
 
 /* Header and Navigation */
@@ -188,12 +190,6 @@ nav {
   align-items: center;
 }
 
-.bmi-calculator form div {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
 .bmi-calculator label {
   margin-bottom: 5px;
   text-align: left;
@@ -220,7 +216,7 @@ nav {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: calc(100% - 40px); /* Adds margin on sides */
+  width: calc(100% - 40px);
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
@@ -233,22 +229,15 @@ nav {
 }
 
 .bmi-result p {
-  color: #fff;
+  color: #000000;
   font-weight: bold;
-  margin-left: 30px;
 }
 
-.bmi-message {
-  color: white;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-
+/* Footer */
 .footer {
   width: 100%;
   background-color: #294747;
-  padding: 10px; /* Reduzido de 20px para 10px */
+  padding: 10px;
   text-align: left;
   position: fixed;
   bottom: 0;
@@ -259,7 +248,7 @@ nav {
 .footer p {
   width: 40%;
   margin: 0;
-  font-size: 0.8em; /* Reduzido de 0.9em para 0.8em */
+  font-size: 0.8em;
   color: #ffffff;
   background-color: transparent;
   padding-left: 20px;
